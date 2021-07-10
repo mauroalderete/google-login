@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 10/07/2021 Release v1.0.0
+
+Se libera la primer implementación del ejecutable login que permite obtener tokens con acceso a los servicios de google api
+
 ## 10/07/2021 Generalizacion y mejoras visuales
 
 Incorporo un flag para especificar el tipo de servicio al que se desea acceder. Por le momento solo es posible acceder a google spreadsheet
