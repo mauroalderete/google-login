@@ -12,6 +12,22 @@ Se utiliza la libreria gitlab.com/rayquen-google/golang/auth
 
 Se requiere previamente una credencial para aplicaciones clientes generada por google console. Estas credenciales deben generarse para cada aplicación de destino
 
+# Instalar
+
+Para instalar las librerias faltantes ejecutar:
+
+```bash
+go mod vendor
+```
+
+# Compilar
+
+Para compilar correr:
+
+```
+go build
+```
+
 # Uso
 
 > Para usarlo es necesario contar con un archivo de credencial de cliente otorgado por google. Se puede obtener gestionando las credenciales con Google Console.
