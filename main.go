@@ -17,6 +17,7 @@ func main() {
 	var flagToken = flag.String("token", "token.json", "Filename to save token when login is succefull. For default is 'token.json' ")
 	var flagVersion = flag.Bool("version", false, "Version of alMercadito API RESTful Login")
 	var flagHelp = flag.Bool("help", false, "Show help information")
+	var flagSpreadsheet = flag.Bool("spreadsheet", false, "Request access autorization to Google Spreadsheets")
 
 	flag.Parse()
 
@@ -40,7 +41,16 @@ func main() {
 		return
 	}
 
-	var auth auth_service.IAuthService = &auth_service_spreadsheet.AuthServiceSpreadsheet{}
+	var auth auth_service.IAuthService = nil
+
+	if *flagSpreadsheet {
+		auth = &auth_service_spreadsheet.AuthServiceSpreadsheet{}
+	}
+
+	if auth == nil {
+		log.Fatalln("Flag of type access autorization request is required\nExecute 'login -help' to more information")
+		return
+	}
 
 	auth.Initialize(credential, token, true)
 
